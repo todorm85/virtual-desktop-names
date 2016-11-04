@@ -9,11 +9,18 @@ namespace VirtualDesktopNames
     {
         internal VirtualDesktopsWrapper VdWrapper { get; set; }
         public VirtualDesktopsData Data { get; set; }
+        public event EventHandler OnDesktopChanged;
 
         public VirtualDesktopsManager()
         {
             this.Data = new VirtualDesktopsData();
             this.VdWrapper = new VirtualDesktopsWrapper();
+            VirtualDesktop.CurrentChanged += VirtualDesktop_CurrentChanged;
+        }
+
+        private void VirtualDesktop_CurrentChanged(object sender, VirtualDesktopChangedEventArgs e)
+        {
+            this.OnDesktopChanged?.Invoke(this, new EventArgs());
         }
 
         public void SetCurrentDesktopName(string name)
@@ -32,11 +39,11 @@ namespace VirtualDesktopNames
             }
         }
 
-        internal string GetCurrentDesktopName()
+        public string GetCurrentDesktopName()
         {
             var currentWindowsDesktop = this.VdWrapper.CurrentDesktop;
             var currentDesktopDataModel = this.Data.GetDesktops().FirstOrDefault(x => x.Id == currentWindowsDesktop.Id);
-            if (currentDesktopDataModel != null && currentDesktopDataModel.Name != null)
+            if (currentDesktopDataModel != null && !string.IsNullOrEmpty(currentDesktopDataModel.Name))
             {
                 return currentDesktopDataModel.Name;
             }

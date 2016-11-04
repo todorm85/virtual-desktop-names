@@ -1,8 +1,7 @@
-﻿
-using System;
+﻿using System;
 using System.Threading;
 
-namespace VirtualDesktopNames
+namespace VirtualDesktopNames.Cmd
 {
     internal class Program
     {

@@ -6,6 +6,13 @@ namespace VirtualDesktopNames
 {
     public class VirtualDesktopsWrapper
     {
+        public event EventHandler OnDesktopChanged;
+
+        public VirtualDesktopsWrapper()
+        {
+            VirtualDesktop.CurrentChanged += VirtualDesktop_CurrentChanged;
+        }
+
         public VirtualDesktop CurrentDesktop
         {
             get
@@ -25,6 +32,11 @@ namespace VirtualDesktopNames
         public int GetDesktopIndex(VirtualDesktop desktop)
         {
             return Array.IndexOf(this.GetDesktops(), desktop);
+        }
+
+        private void VirtualDesktop_CurrentChanged(object sender, VirtualDesktopChangedEventArgs e)
+        {
+            this.OnDesktopChanged?.Invoke(this, new EventArgs());
         }
     }
 }
