@@ -66,11 +66,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MVVMBaseClasses\DelegateCommand.cs" />
+    <Compile Include="MVVMBaseClasses\ObservableObject.cs" />
+    <Compile Include="TaskbarIconViewModel.cs" />
     <Page Include="DesktopNameChange.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="TaskbarIcon.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -81,8 +84,8 @@
     <Compile Include="DesktopNameChange.xaml.cs">
       <DependentUpon>DesktopNameChange.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="TaskbarIcon.xaml.cs">
+      <DependentUpon>TaskbarIcon.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

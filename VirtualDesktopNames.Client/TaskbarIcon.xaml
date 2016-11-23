@@ -9,7 +9,7 @@
         Title="MainWindow" Height="350" Width="525"
         Visibility="Hidden">
     <Grid>
-        <tb:TaskbarIcon ToolTipText="hello world" x:Name="MyNotifyIcon" >
+        <tb:TaskbarIcon ToolTipText="{Binding CurrentDesktopName}" x:Name="MyNotifyIcon" >
 
             <tb:TaskbarIcon.TrayPopup>
                 <Border Background="WhiteSmoke"
@@ -18,15 +18,15 @@
                         CornerRadius="4"
                         Width="Auto"
                         Height="Auto">
-                    <TextBlock x:Name="TrayPopupTB" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="17"/>
+                    <TextBlock x:Name="TrayPopupTB" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="17" Text="{Binding CurrentDesktopName}"/>
                 </Border>
             </tb:TaskbarIcon.TrayPopup>
 
 
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu Background="WhiteSmoke">
-                    <MenuItem Header="Set name" Click="SetName_Button_Click"> </MenuItem>
-                    <MenuItem Header="Exit" Click="Exit_Button_Click" />
+                    <MenuItem Header="Set name" Command="{Binding SetNameCommand}"/>
+                    <MenuItem Header="Exit" Command="{Binding ExitCommand}" />
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>
 
