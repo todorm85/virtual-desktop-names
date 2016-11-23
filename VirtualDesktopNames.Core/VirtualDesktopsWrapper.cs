@@ -2,7 +2,7 @@
 using System.Linq;
 using WindowsDesktop;
 
-namespace VirtualDesktopNames
+namespace VirtualDesktopNames.Core
 {
     public class VirtualDesktopsWrapper
     {

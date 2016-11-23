@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using VirtualDesktopNames.DataModels;
+using VirtualDesktopNames.Core.DataModels;
 
-namespace VirtualDesktopNames
+namespace VirtualDesktopNames.Core
 {
     public class VirtualDesktopsData
     {

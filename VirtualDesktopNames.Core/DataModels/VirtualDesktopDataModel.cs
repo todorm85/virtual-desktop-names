@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace VirtualDesktopNames.DataModels
+namespace VirtualDesktopNames.Core.DataModels
 {
     public class VirtualDesktopDataModel
     {

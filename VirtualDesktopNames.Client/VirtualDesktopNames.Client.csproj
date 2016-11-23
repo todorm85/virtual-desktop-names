@@ -119,7 +119,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VirtualDesktopNames\VirtualDesktopNames.Core.csproj">
+    <ProjectReference Include="..\VirtualDesktopNames.Core\VirtualDesktopNames.Core.csproj">
       <Project>{c727c776-c03f-42b3-877b-b2fabababb44}</Project>
       <Name>VirtualDesktopNames.Core</Name>
     </ProjectReference>
