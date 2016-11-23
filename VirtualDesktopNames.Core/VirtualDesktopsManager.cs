@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading;
 using WindowsDesktop;
 
-namespace VirtualDesktopNames
+namespace VirtualDesktopNames.Core
 {
     public class VirtualDesktopsManager
     {

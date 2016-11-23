@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using VirtualDesktopNames.Client.MVVMBaseClasses;
+using VirtualDesktopNames.Core;
 
 namespace VirtualDesktopNames.Client
 {
